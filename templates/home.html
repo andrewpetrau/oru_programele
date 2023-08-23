@@ -1,0 +1,35 @@
+{% extends "base.html" %} <!-- Šis šablonas išplės "base.html", todėl visos to šablono savybės bus paveldėtos -->
+
+{% block content %} <!-- Prasideda turinio blokas, kuris bus įtrauktas į "base.html" šablono "content" bloką -->
+
+<div class="row justify-content-center my-5">
+    <div class="col-md-5">
+        <div class="mt-4 p-5 bg-success text-white rounded mb-3">
+            <h1>Django orų programa</h1> <!-- Antraštė programos pavadinimui -->
+        </div>
+        <form action="." method="POST"> <!-- Forma, kuri leis vartotojui ieškoti orų pagal miestą. Ji veiks POST metodu ir bus siunčiama į tą patį URL -->
+        {% csrf_token %} <!-- CSRF apsaugos žetonas Django programai -->
+        <div class="input-group">
+            <input type="text" required class="form-control" name="city" placeholder="Ieškoti miesto..."> <!-- Teksto laukelis miestui ieškoti -->
+            <div class="input-group-append">
+                <button class="btn btn-success" type="submit">Paieška</button> <!-- Mygtukas formos pateikimui -->
+            </div>
+        </div>
+        </form>
+        <hr>
+        <div class="card">
+            <div class="card-body">
+                <img src="http://openweathermap.org/img/w/{{ icon }}.png" alt=""> <!-- Paveikslėlis atvaizduojantis orų ikoną -->
+
+                <div class="card-text float-end">{{ time }}</div> <!-- Laikas -->
+                <div class="card-text"><h5>{{ city }}, {{ country_code }}</h5></div> <!-- Miesto pavadinimas ir šalies kodas -->
+                <div class="card-text"><h6>{{ temperature }} C</h6></div> <!-- Temperatūra -->
+                <div class="card-text"><h6>{{ description | title }}</h6></div> <!-- Oro aprašymas su pavadinimo filtru -->
+                <div class="card-text"><h6>{{ wind }}</h6></div> <!-- Vėjo greitis -->
+                <div class="card-text"><h6>{{ humidity }}</h6></div> <!-- Drėgmė -->
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %} <!-- Baigiasi turinio blokas -->

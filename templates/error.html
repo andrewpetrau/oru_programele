@@ -1,0 +1,13 @@
+{% extends "base.html" %} <!-- Nurodo, kad šis šablonas išplės "base.html" šabloną. Tai reiškia, kad visas "base.html" turinys bus įtrauktas čia, išskyrus tai, kas yra "content" bloke -->
+
+{% block content %} <!-- Prasideda "content" blokas, kuris perrašys atitinkamą bloką "base.html" šablone -->
+
+<div class="row justify-content-center my-5"> <!-- Sukuria horizontalų elementų išdėstymą su centravimu ir atstumu nuo viršaus ir apačios (Bootstrap klasės) -->
+    <div class="col-md-5"> <!-- Sukuria stulpelį, kuris užima 5/12 ekrano pločio vidutinio dydžio ir didesniuose ekranuose -->
+        <h1>Puslapis nerastas</h1> <!-- Antraštė, kuri informuoja vartotoją, kad puslapis nerastas -->
+        <p>Įsitikinkite, kad esate prisijungę prie interneto arba įvedėte tinkamą miesto pavadinimą</p> <!-- Paaiškinimo paragrafas, kaip gali būti ištaisyta klaida -->
+        <a href="{% url 'home' %}" class="btn btn-secondary">Namai</a> <!-- Mygtukas, nukreipiantis vartotoją į pagrindinį puslapį. Naudoja Django URL "home" pavadinimą generuoti nuorodai -->
+    </div>
+</div>
+
+{% endblock %} <!-- Baigiasi "content" blokas -->

@@ -1,0 +1,15 @@
+<!DOCTYPE html> <!-- Nurodo HTML dokumento tipą, kad naršyklė suprastų, jog tai yra HTML5 dokumentas -->
+<html lang="en"> <!-- Prasideda HTML dokumentas ir nurodoma pagrindinė kalba (anglų) -->
+<head>
+    <meta charset="UTF-8"> <!-- Nurodo naudojamą simbolių koduotę, kad tekstas būtų teisingai atvaizduojamas -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Nurodo suderinamumą su Internet Explorer naršykle -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Optimizuoja atvaizdavimą mobiliems įrenginiams -->
+    <title>Django orų programa</title> <!-- Nustato tinklalapio pavadinimą, kuris matomas naršyklės kortelėje -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"> <!-- Įtraukia Bootstrap CSS stilių, kuris leidžia lengvai stiliaus patobulinimams -->
+</head>
+<body> <!-- Prasideda tinklalapio turinys -->
+    {% block content %} <!-- Šis blokas yra skirtas Django šablonų sistemai, leidžiantis perpildyti šį bloką kitame šablone -->
+
+    {% endblock %} <!-- Baigiasi Django šablonų blokas -->
+</body>
+</html> <!-- Baigiasi HTML dokumentas -->
